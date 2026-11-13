@@ -1,0 +1,7 @@
+__pycache__/
+*.wav
+.claude/
+.venv/
+audition/
+audio/raw/
+render.log

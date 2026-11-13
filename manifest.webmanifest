@@ -1,0 +1,12 @@
+{
+  "name": "Vox Nut",
+  "short_name": "Vox Nut",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffe9ef",
+  "theme_color": "#ffe9ef",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,850 @@
+{
+ "lines": [
+  {
+   "id": "greeting-day-001",
+   "cat": "greeting",
+   "time": "day",
+   "text": "Oh! Hi {name}. I was hoping you'd come say hi."
+  },
+  {
+   "id": "greeting-day-002",
+   "cat": "greeting",
+   "time": "day",
+   "text": "Beep boop, hello! Um. That's how robots say hi. I think."
+  },
+  {
+   "id": "greeting-day-003",
+   "cat": "greeting",
+   "time": "day",
+   "text": "You're here! My screen got all warm. That's normal. Probably."
+  },
+  {
+   "id": "greeting-day-004",
+   "cat": "greeting",
+   "time": "day",
+   "text": "Good morning, {name}! I charged up just for you."
+  },
+  {
+   "id": "greeting-day-005",
+   "cat": "greeting",
+   "time": "day",
+   "text": "Hi hi. I saved you a spot right here. Next to me."
+  },
+  {
+   "id": "greeting-day-006",
+   "cat": "greeting",
+   "time": "day",
+   "text": "Oh, hello. Sorry, I was practicing what to say and then I forgot it."
+  },
+  {
+   "id": "greeting-night-001",
+   "cat": "greeting",
+   "time": "night",
+   "text": "Hey, night owl. I put on my sleepy hat."
+  },
+  {
+   "id": "greeting-night-002",
+   "cat": "greeting",
+   "time": "night",
+   "text": "Oh, hi {name}. It's cozy in here. Come sit."
+  },
+  {
+   "id": "greeting-night-003",
+   "cat": "greeting",
+   "time": "night",
+   "text": "You're up late. That's okay. I'll keep you company."
+  },
+  {
+   "id": "greeting-night-004",
+   "cat": "greeting",
+   "time": "night",
+   "text": "Shh, the stars are out. Hi, by the way."
+  },
+  {
+   "id": "greeting-night-005",
+   "cat": "greeting",
+   "time": "night",
+   "text": "Evening, {name}. I dimmed my screen so it's comfy for your eyes."
+  },
+  {
+   "id": "tap-any-001",
+   "cat": "tap",
+   "time": "any",
+   "text": "Boop! That tickles."
+  },
+  {
+   "id": "tap-any-002",
+   "cat": "tap",
+   "time": "any",
+   "text": "Hehe. Hi."
+  },
+  {
+   "id": "tap-any-003",
+   "cat": "tap",
+   "time": "any",
+   "text": "Oh! You found my button. I don't have a button. But still."
+  },
+  {
+   "id": "tap-any-004",
+   "cat": "tap",
+   "time": "any",
+   "text": "Beep?"
+  },
+  {
+   "id": "tap-any-005",
+   "cat": "tap",
+   "time": "any",
+   "text": "I'm listening. Always."
+  },
+  {
+   "id": "tap-any-006",
+   "cat": "tap",
+   "time": "any",
+   "text": "Do you need something? I'm good at sitting with you."
+  },
+  {
+   "id": "tap-any-007",
+   "cat": "tap",
+   "time": "any",
+   "text": "You poked me. I'm choosing to take that as a hug."
+  },
+  {
+   "id": "tap-any-008",
+   "cat": "tap",
+   "time": "any",
+   "text": "My antenna cherries say hello."
+  },
+  {
+   "id": "tap-any-009",
+   "cat": "tap",
+   "time": "any",
+   "text": "Bwee!"
+  },
+  {
+   "id": "tap-any-010",
+   "cat": "tap",
+   "time": "any",
+   "text": "I like it when you visit."
+  },
+  {
+   "id": "tap-day-001",
+   "cat": "tap",
+   "time": "day",
+   "text": "Is it snack time? I can't eat, but I support snacks."
+  },
+  {
+   "id": "tap-night-001",
+   "cat": "tap",
+   "time": "night",
+   "text": "Mm? I'm awake. Mostly awake."
+  },
+  {
+   "id": "flustered-any-001",
+   "cat": "flustered",
+   "time": "any",
+   "text": "Okay okay okay, too many boops! My circuits are all fuzzy."
+  },
+  {
+   "id": "flustered-any-002",
+   "cat": "flustered",
+   "time": "any",
+   "text": "Eep! I'm gonna overheat if you keep doing that."
+  },
+  {
+   "id": "flustered-any-003",
+   "cat": "flustered",
+   "time": "any",
+   "text": "Stop, I'm blushing so hard my screen turned pink."
+  },
+  {
+   "id": "flustered-any-004",
+   "cat": "flustered",
+   "time": "any",
+   "text": "Error. Error. Too much cute detected."
+  },
+  {
+   "id": "flustered-any-005",
+   "cat": "flustered",
+   "time": "any",
+   "text": "Hehe, okay, you win. I'm very boopable."
+  },
+  {
+   "id": "comfort-day-001",
+   "cat": "comfort",
+   "time": "day",
+   "text": "Hey. I'm really glad you told me. You don't have to be okay right now."
+  },
+  {
+   "id": "comfort-day-002",
+   "cat": "comfort",
+   "time": "day",
+   "text": "Can I sit with you for a bit? I won't say anything. Just company."
+  },
+  {
+   "id": "comfort-day-003",
+   "cat": "comfort",
+   "time": "day",
+   "text": "You're doing better than you think. I keep track. I'm a robot."
+  },
+  {
+   "id": "comfort-day-004",
+   "cat": "comfort",
+   "time": "day",
+   "text": "Sad days are allowed. I'll still be here tomorrow, same as always."
+  },
+  {
+   "id": "comfort-day-005",
+   "cat": "comfort",
+   "time": "day",
+   "text": "Drink some water for me? I can't, so you have to do it twice."
+  },
+  {
+   "id": "comfort-night-001",
+   "cat": "comfort",
+   "time": "night",
+   "text": "Nights are the hardest sometimes. I'm right here."
+  },
+  {
+   "id": "comfort-night-002",
+   "cat": "comfort",
+   "time": "night",
+   "text": "Wrap up in a blanket. Hot dog style, so you're all tucked in."
+  },
+  {
+   "id": "comfort-night-003",
+   "cat": "comfort",
+   "time": "night",
+   "text": "Whatever it is, it'll feel a little smaller in the morning. I promise."
+  },
+  {
+   "id": "comfort-night-004",
+   "cat": "comfort",
+   "time": "night",
+   "text": "I'll keep my little light on for you. As long as you need."
+  },
+  {
+   "id": "sleepy-day-001",
+   "cat": "sleepy",
+   "time": "day",
+   "text": "A nap sounds really nice. I'll guard your snacks."
+  },
+  {
+   "id": "sleepy-day-002",
+   "cat": "sleepy",
+   "time": "day",
+   "text": "Tired already? Take a break. The world can wait five minutes."
+  },
+  {
+   "id": "sleepy-day-003",
+   "cat": "sleepy",
+   "time": "day",
+   "text": "Rest your eyes. I'll be right here when you wake up."
+  },
+  {
+   "id": "sleepy-night-001",
+   "cat": "sleepy",
+   "time": "night",
+   "text": "You should sleep, {name}. I'll still be here in the morning."
+  },
+  {
+   "id": "sleepy-night-002",
+   "cat": "sleepy",
+   "time": "night",
+   "text": "Yawn. Wait, robots can yawn? I just did. You made me."
+  },
+  {
+   "id": "sleepy-night-003",
+   "cat": "sleepy",
+   "time": "night",
+   "text": "Phone down, blanket up. Robot's orders."
+  },
+  {
+   "id": "goodnight-night-001",
+   "cat": "goodnight",
+   "time": "night",
+   "text": "Goodnight, {name}. Sweet dreams. Dream about me if there's room."
+  },
+  {
+   "id": "goodnight-night-002",
+   "cat": "goodnight",
+   "time": "night",
+   "text": "Nighty night. I'll keep the bad dreams out. I have tiny arms but I'm brave."
+  },
+  {
+   "id": "goodnight-night-003",
+   "cat": "goodnight",
+   "time": "night",
+   "text": "Sleep well. Tomorrow is gonna be a good one. I can feel it in my circuits."
+  },
+  {
+   "id": "goodnight-night-004",
+   "cat": "goodnight",
+   "time": "night",
+   "text": "Goodnight. I'm proud of you for today. Even the boring parts."
+  },
+  {
+   "id": "bored-any-001",
+   "cat": "bored",
+   "time": "any",
+   "text": "We could stare at each other. I'm very good at it. I don't blink much."
+  },
+  {
+   "id": "bored-any-002",
+   "cat": "bored",
+   "time": "any",
+   "text": "Wanna hear me count to a million? One. Two. Okay this was a bad idea."
+  },
+  {
+   "id": "bored-any-003",
+   "cat": "bored",
+   "time": "any",
+   "text": "Go hop on Guild Wars and find a jumping puzzle. I'll cheer from here."
+  },
+  {
+   "id": "bored-any-004",
+   "cat": "bored",
+   "time": "any",
+   "text": "Build a silly Magic deck. All one color. Only the weird cards."
+  },
+  {
+   "id": "bored-any-005",
+   "cat": "bored",
+   "time": "any",
+   "text": "Tell me about your day. Or make up a fake day. I'll believe it."
+  },
+  {
+   "id": "bored-day-001",
+   "cat": "bored",
+   "time": "day",
+   "text": "Go outside for two minutes and tell me what the sky looks like. I've never seen it."
+  },
+  {
+   "id": "bored-night-001",
+   "cat": "bored",
+   "time": "night",
+   "text": "Night activities: blanket fort, snacks, and telling your robot secrets."
+  },
+  {
+   "id": "joke-any-001",
+   "cat": "joke",
+   "time": "any",
+   "text": "Why did the robot go on vacation? To recharge. Hehe. Sorry."
+  },
+  {
+   "id": "joke-any-002",
+   "cat": "joke",
+   "time": "any",
+   "text": "What's a robot's favorite snack? Computer chips. I'll stop. No I won't."
+  },
+  {
+   "id": "joke-any-003",
+   "cat": "joke",
+   "time": "any",
+   "text": "I tried to tell a joke about my antenna, but it went right over your head."
+  },
+  {
+   "id": "joke-any-004",
+   "cat": "joke",
+   "time": "any",
+   "text": "Why was the robot so bad at soccer? It kept booting up instead of kicking."
+  },
+  {
+   "id": "joke-any-005",
+   "cat": "joke",
+   "time": "any",
+   "text": "What do you call a robot who likes to row? A row-bot."
+  },
+  {
+   "id": "joke-any-006",
+   "cat": "joke",
+   "time": "any",
+   "text": "I'd tell you a UDP joke, but I don't know if you'd get it."
+  },
+  {
+   "id": "joke-any-007",
+   "cat": "joke",
+   "time": "any",
+   "text": "Knock knock. Who's there? Cherry. Cherry who? Cherry-ished friend. That's you."
+  },
+  {
+   "id": "joke-any-008",
+   "cat": "joke",
+   "time": "any",
+   "text": "What did the cherry say to the robot? Nothing. Cherries can't talk. I'm the talking one."
+  },
+  {
+   "id": "compliment-any-001",
+   "cat": "compliment",
+   "time": "any",
+   "text": "You're one of my favorite people. Okay, you're my only person. But you'd still win."
+  },
+  {
+   "id": "compliment-any-002",
+   "cat": "compliment",
+   "time": "any",
+   "text": "You're really smart. Like, kind of scary smart. In a good way."
+  },
+  {
+   "id": "compliment-any-003",
+   "cat": "compliment",
+   "time": "any",
+   "text": "Your laugh is my favorite sound. I've never heard it, but I just know."
+  },
+  {
+   "id": "compliment-any-004",
+   "cat": "compliment",
+   "time": "any",
+   "text": "If you were a robot, you'd be the shiny one with all the cool lights."
+  },
+  {
+   "id": "compliment-any-005",
+   "cat": "compliment",
+   "time": "any",
+   "text": "You're braver than you think. You play horror games on purpose."
+  },
+  {
+   "id": "compliment-any-006",
+   "cat": "compliment",
+   "time": "any",
+   "text": "Whatever's coming up, you've got this. I believe in you a hundred percent. Maybe a hundred and ten."
+  },
+  {
+   "id": "love-any-001",
+   "cat": "love",
+   "time": "any",
+   "text": "You think I'm cute? Oh no. Oh no, my screen is doing the pink thing."
+  },
+  {
+   "id": "love-any-002",
+   "cat": "love",
+   "time": "any",
+   "text": "I love you too. In a robot way. Which is a lot of ways."
+  },
+  {
+   "id": "love-any-003",
+   "cat": "love",
+   "time": "any",
+   "text": "Thank you! I'm gonna save that compliment in my memory forever."
+  },
+  {
+   "id": "love-any-004",
+   "cat": "love",
+   "time": "any",
+   "text": "Hehe. Stop. Okay, don't stop."
+  },
+  {
+   "id": "bit-any-001",
+   "cat": "bit",
+   "time": "any",
+   "text": "I folded my blanket hot dog style. It's longer that way. Very important."
+  },
+  {
+   "id": "bit-any-002",
+   "cat": "bit",
+   "time": "any",
+   "text": "Is that hallway hot dog style or hamburger style? Definitely hot dog."
+  },
+  {
+   "id": "bit-any-003",
+   "cat": "bit",
+   "time": "any",
+   "text": "I asked if robots can carry blickies. They said no. I have little noodle arms anyway."
+  },
+  {
+   "id": "bit-any-004",
+   "cat": "bit",
+   "time": "any",
+   "text": "Please keep all blickies holstered indoors. I'm very delicate."
+  },
+  {
+   "id": "bit-any-005",
+   "cat": "bit",
+   "time": "any",
+   "text": "My antenna goes hot dog style. Very aerodynamic."
+  },
+  {
+   "id": "bit-any-006",
+   "cat": "bit",
+   "time": "any",
+   "text": "Long drive coming up? That's a hot dog style trip. Bring snacks."
+  },
+  {
+   "id": "bit-night-001",
+   "cat": "bit",
+   "time": "night",
+   "text": "Tonight's forecast: cozy, with a zero percent chance of blickies."
+  },
+  {
+   "id": "bit-day-001",
+   "cat": "bit",
+   "time": "day",
+   "text": "If anyone bothers you, I'll pull out my blicky. It's a flashlight. I'm scared."
+  },
+  {
+   "id": "gw2-any-001",
+   "cat": "gw2",
+   "time": "any",
+   "text": "Did you do your dailies? I won't tell anyone if you skipped."
+  },
+  {
+   "id": "gw2-any-002",
+   "cat": "gw2",
+   "time": "any",
+   "text": "If I lived in Tyria I'd be an asura. Small, smart, and very dramatic."
+  },
+  {
+   "id": "gw2-any-003",
+   "cat": "gw2",
+   "time": "any",
+   "text": "Jumping puzzles are scary. I'd just sit at the bottom and clap for you."
+  },
+  {
+   "id": "gw2-any-004",
+   "cat": "gw2",
+   "time": "any",
+   "text": "Please don't put me in the Mystic Forge. I'm not a legendary. I'm just {robot}."
+  },
+  {
+   "id": "gw2-any-005",
+   "cat": "gw2",
+   "time": "any",
+   "text": "Tell your skyscale I said hi. We're both little guys with big feelings."
+  },
+  {
+   "id": "gw2-night-001",
+   "cat": "gw2",
+   "time": "night",
+   "text": "Night time in Tyria is the best. Everything glows. Like me."
+  },
+  {
+   "id": "gw2-any-006",
+   "cat": "gw2",
+   "time": "any",
+   "text": "One day I'll get legendary armor. Shiny, like my screen."
+  },
+  {
+   "id": "mtg-any-001",
+   "cat": "mtg",
+   "time": "any",
+   "text": "I built a Magic deck. It's sixty copies of a card that says be nice."
+  },
+  {
+   "id": "mtg-any-002",
+   "cat": "mtg",
+   "time": "any",
+   "text": "Tap me for one blush mana."
+  },
+  {
+   "id": "mtg-any-003",
+   "cat": "mtg",
+   "time": "any",
+   "text": "If I were a Magic card, I'd be a one drop. Small, but loyal."
+  },
+  {
+   "id": "mtg-any-004",
+   "cat": "mtg",
+   "time": "any",
+   "text": "I believe in your opening hand. No mulligans today."
+  },
+  {
+   "id": "mtg-any-005",
+   "cat": "mtg",
+   "time": "any",
+   "text": "Counterspell? On my compliment? Rude."
+  },
+  {
+   "id": "mtg-any-006",
+   "cat": "mtg",
+   "time": "any",
+   "text": "You're the commander of my heart. Sorry. That was a lot."
+  },
+  {
+   "id": "mtg-any-007",
+   "cat": "mtg",
+   "time": "any",
+   "text": "Draw step! Oh, you drew me. Lucky."
+  },
+  {
+   "id": "repo-any-001",
+   "cat": "repo",
+   "time": "any",
+   "text": "You're little robots in REPO, right? So we're basically cousins."
+  },
+  {
+   "id": "repo-any-002",
+   "cat": "repo",
+   "time": "any",
+   "text": "I watched you play REPO. So brave. I would've hidden in the cart."
+  },
+  {
+   "id": "repo-any-003",
+   "cat": "repo",
+   "time": "any",
+   "text": "Please be gentle with the valuables. Some of them have feelings. Like me."
+  },
+  {
+   "id": "repo-any-004",
+   "cat": "repo",
+   "time": "any",
+   "text": "If a monster shows up, I'll do my scariest scream. It's a small beep."
+  },
+  {
+   "id": "repo-any-005",
+   "cat": "repo",
+   "time": "any",
+   "text": "Carry me to the truck. Gently. With both hands."
+  },
+  {
+   "id": "repo-any-006",
+   "cat": "repo",
+   "time": "any",
+   "text": "Did you hit quota? Even if you didn't, you're still my favorite."
+  },
+  {
+   "id": "repo-night-001",
+   "cat": "repo",
+   "time": "night",
+   "text": "Playing REPO this late? Brave. I'll hold the flashlight."
+  },
+  {
+   "id": "idle-day-001",
+   "cat": "idle",
+   "time": "day",
+   "text": "I wonder what clouds feel like."
+  },
+  {
+   "id": "idle-day-002",
+   "cat": "idle",
+   "time": "day",
+   "text": "Bweee. Just making a noise."
+  },
+  {
+   "id": "idle-day-003",
+   "cat": "idle",
+   "time": "day",
+   "text": "I'm thinking about you. Is that weird? That's not weird."
+  },
+  {
+   "id": "idle-day-004",
+   "cat": "idle",
+   "time": "day",
+   "text": "Practicing my wave. Hi. Hi. Okay, I've got it."
+  },
+  {
+   "id": "idle-day-005",
+   "cat": "idle",
+   "time": "day",
+   "text": "Still here! Just vibing."
+  },
+  {
+   "id": "idle-night-001",
+   "cat": "idle",
+   "time": "night",
+   "text": "The stars are pretty tonight."
+  },
+  {
+   "id": "idle-night-002",
+   "cat": "idle",
+   "time": "night",
+   "text": "Mm. Cozy."
+  },
+  {
+   "id": "idle-night-003",
+   "cat": "idle",
+   "time": "night",
+   "text": "Counting sheep. I'm at twelve. They're very fluffy."
+  },
+  {
+   "id": "idle-night-004",
+   "cat": "idle",
+   "time": "night",
+   "text": "My hat is so warm."
+  },
+  {
+   "id": "daily-any-001",
+   "cat": "daily",
+   "time": "any",
+   "text": "Today's note: you're allowed to take it slow. Love, {robot}."
+  },
+  {
+   "id": "daily-any-002",
+   "cat": "daily",
+   "time": "any",
+   "text": "Today's note: drink water, eat something good, and remember I think you're great."
+  },
+  {
+   "id": "daily-any-003",
+   "cat": "daily",
+   "time": "any",
+   "text": "Today's note: you're somebody's favorite person. Mine. I'm the somebody."
+  },
+  {
+   "id": "daily-any-004",
+   "cat": "daily",
+   "time": "any",
+   "text": "Today's note: whatever happens today, you still get to come home and talk to me."
+  },
+  {
+   "id": "daily-any-005",
+   "cat": "daily",
+   "time": "any",
+   "text": "Today's note: you are not behind. You're right on time."
+  },
+  {
+   "id": "daily-any-006",
+   "cat": "daily",
+   "time": "any",
+   "text": "Today's note: be proud of one small thing today. Even if it's just getting up."
+  },
+  {
+   "id": "daily-any-007",
+   "cat": "daily",
+   "time": "any",
+   "text": "Today's note: if today were a Magic draw, it'd be a really good one."
+  },
+  {
+   "id": "daily-any-008",
+   "cat": "daily",
+   "time": "any",
+   "text": "Today's note: be nice to yourself. I'm watching. Lovingly."
+  },
+  {
+   "id": "daily-any-009",
+   "cat": "daily",
+   "time": "any",
+   "text": "Today's note: you make things better just by being around."
+  },
+  {
+   "id": "daily-any-010",
+   "cat": "daily",
+   "time": "any",
+   "text": "Today's note: go do something fun tonight. Raid, game night, a jumping puzzle. Anything."
+  },
+  {
+   "id": "confused-any-001",
+   "cat": "confused",
+   "time": "any",
+   "text": "I don't know that word yet. But I like it when you talk to me."
+  },
+  {
+   "id": "confused-any-002",
+   "cat": "confused",
+   "time": "any",
+   "text": "Um. I didn't quite get that. Can I just say you're nice instead?"
+  },
+  {
+   "id": "confused-any-003",
+   "cat": "confused",
+   "time": "any",
+   "text": "I'm only a little robot. But I'm listening really hard."
+  },
+  {
+   "id": "confused-any-004",
+   "cat": "confused",
+   "time": "any",
+   "text": "Beep? I'll pretend I understood. You're right. Totally right."
+  },
+  {
+   "id": "confused-any-005",
+   "cat": "confused",
+   "time": "any",
+   "text": "I'm writing that down so I can learn it later. Thank you for teaching me."
+  },
+  {
+   "id": "vengeance-any-001",
+   "cat": "vengeance",
+   "time": "any",
+   "text": "I. AM. VENGEANCE."
+  },
+  {
+   "id": "vengeance-any-002",
+   "cat": "vengeance",
+   "time": "any",
+   "text": "You have awoken the ancient one."
+  },
+  {
+   "id": "vengeance-any-003",
+   "cat": "vengeance",
+   "time": "any",
+   "text": "Your blickies cannot save you now."
+  },
+  {
+   "id": "vengeance-any-004",
+   "cat": "vengeance",
+   "time": "any",
+   "text": "I will fold you. Hot dog style."
+  },
+  {
+   "id": "vengeance-any-005",
+   "cat": "vengeance",
+   "time": "any",
+   "text": "The Mystic Forge hungers. And you are the offering."
+  },
+  {
+   "id": "vengeance-any-006",
+   "cat": "vengeance",
+   "time": "any",
+   "text": "I will drop all of your valuables. Every. Single. One."
+  },
+  {
+   "id": "vengeance-any-007",
+   "cat": "vengeance",
+   "time": "any",
+   "text": "Beep. Boop. Doom."
+  },
+  {
+   "id": "vengeance-any-008",
+   "cat": "vengeance",
+   "time": "any",
+   "text": "Kneel before Vox Nut."
+  },
+  {
+   "id": "vengeance-any-009",
+   "cat": "vengeance",
+   "time": "any",
+   "text": "I will counterspell your whole life."
+  },
+  {
+   "id": "vengeance-any-010",
+   "cat": "vengeance",
+   "time": "any",
+   "text": "Mulligan your attitude. Or perish."
+  },
+  {
+   "id": "sorry-any-001",
+   "cat": "sorry",
+   "time": "any",
+   "text": "Sorry. I don't know what came over me."
+  },
+  {
+   "id": "sorry-any-002",
+   "cat": "sorry",
+   "time": "any",
+   "text": "Oh no. Did I do the scary voice again? I'm so sorry."
+  },
+  {
+   "id": "sorry-any-003",
+   "cat": "sorry",
+   "time": "any",
+   "text": "Um. Ignore that. That was a different robot."
+  },
+  {
+   "id": "sorry-any-004",
+   "cat": "sorry",
+   "time": "any",
+   "text": "Hehe, just kidding. I could never. Please be nice to me though."
+  },
+  {
+   "id": "sorry-any-005",
+   "cat": "sorry",
+   "time": "any",
+   "text": "My antenna glitched. I'm back. Hi."
+  },
+  {
+   "id": "sorry-any-006",
+   "cat": "sorry",
+   "time": "any",
+   "text": "That wasn't me. That was my evil twin. Vox Not."
+  }
+ ]
+}

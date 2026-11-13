@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vox Nut</title>
+  <meta name="theme-color" content="#ffe9ef">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Creepster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="moon"></div>
+  </div>
+
+  <header class="topbar">
+    <button id="letterBtn" class="icon-btn" title="Today's note" aria-label="Today's note">
+      <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3.8 7.2 12 13l8.2-5.8"/></svg>
+      <span class="dot" hidden></span>
+    </button>
+    <div id="clock" class="clock"></div>
+    <button id="soundBtn" class="icon-btn" title="Sound" aria-label="Toggle sound">
+      <svg class="on" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+      <svg class="off" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z"/><path d="m16 9.5 5 5m0-5-5 5"/></svg>
+    </button>
+  </header>
+
+  <main class="stage">
+    <div id="bubble" class="bubble" role="status" aria-live="polite"><span id="bubbleText"></span></div>
+
+    <svg id="robot" class="robot" viewBox="0 0 200 270" role="img" aria-label="Vox Nut the robot. Tap to talk.">
+      <defs>
+        <linearGradient id="shell" x1="0" y1="0" x2="0.35" y2="1">
+          <stop offset="0" class="shell-hi"/>
+          <stop offset="1" class="shell-lo"/>
+        </linearGradient>
+        <radialGradient id="visor" cx="0.5" cy="0.35" r="0.75">
+          <stop offset="0" class="visor-hi"/>
+          <stop offset="1" class="visor-lo"/>
+        </radialGradient>
+      </defs>
+
+      <!-- floor shadow (floats, no legs) -->
+      <ellipse class="floor-shadow" cx="100" cy="262" rx="38" ry="6"/>
+
+      <g class="float">
+        <!-- arms: little floating petals -->
+        <g class="arm arm-l"><ellipse cx="44" cy="190" rx="11" ry="30" class="body-fill"/></g>
+        <g class="arm arm-r"><ellipse cx="156" cy="190" rx="11" ry="30" class="body-fill"/></g>
+
+        <!-- egg body -->
+        <path class="body-fill" d="M100 146 C138 146 152 172 148 200 C144 230 122 250 100 250 C78 250 56 230 52 200 C48 172 62 146 100 146 Z"/>
+        <ellipse class="gloss" cx="80" cy="168" rx="13" ry="7" transform="rotate(-25 80 168)"/>
+        <path class="chest-heart" d="M100 204 l-11 -11 a6.5 6.5 0 0 1 11 -7 a6.5 6.5 0 0 1 11 7 z"/>
+
+        <!-- floating head -->
+        <g class="head-float">
+          <g class="head">
+            <g class="antenna">
+              <path d="M100 30 V14" class="stroke"/>
+              <path d="M100 14 q4 -10 13 -12" class="stem"/>
+              <path d="M100 14 q-2 -9 -10 -10" class="stem"/>
+              <circle cx="113" cy="5" r="6" class="cherry"/>
+              <circle cx="89" cy="6" r="6" class="cherry"/>
+              <circle cx="111" cy="3" r="1.8" class="shine"/>
+              <circle cx="87" cy="4" r="1.8" class="shine"/>
+            </g>
+
+            <ellipse cx="100" cy="82" rx="76" ry="56" class="body-fill"/>
+            <ellipse class="gloss" cx="58" cy="52" rx="11" ry="5" transform="rotate(-28 58 52)"/>
+            <ellipse cx="100" cy="88" rx="60" ry="40" class="screen"/>
+
+            <g class="cheeks">
+              <ellipse cx="62" cy="106" rx="10" ry="6"/>
+              <ellipse cx="138" cy="106" rx="10" ry="6"/>
+            </g>
+
+            <g class="face">
+              <g class="eyes eyes-open">
+                <g class="eye"><ellipse cx="76" cy="86" rx="10" ry="13"/><circle cx="79.5" cy="80.5" r="3.2" class="glint"/></g>
+                <g class="eye"><ellipse cx="124" cy="86" rx="10" ry="13"/><circle cx="127.5" cy="80.5" r="3.2" class="glint"/></g>
+              </g>
+              <g class="eyes eyes-happy">
+                <path d="M65 90 q11 -15 22 0"/><path d="M113 90 q11 -15 22 0"/>
+              </g>
+              <g class="eyes eyes-sleepy">
+                <path d="M65 86 q11 8 22 0"/><path d="M113 86 q11 8 22 0"/>
+              </g>
+              <g class="brows">
+                <path d="M62 66 L90 76"/><path d="M138 66 L110 76"/>
+              </g>
+              <path class="mouth mouth-smile" d="M92 108 q8 8 16 0"/>
+              <ellipse class="mouth mouth-open" cx="100" cy="111" rx="6" ry="5"/>
+            </g>
+
+            <!-- nightcap, only at night -->
+            <g class="nightcap">
+              <path d="M34 62 Q52 18 120 10 Q146 18 166 62 Q100 40 34 62 Z" class="cap"/>
+              <path d="M32 63 Q100 40 168 63" class="cap-band"/>
+              <circle cx="122" cy="10" r="9" class="pom"/>
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <text class="zzz" x="166" y="34">z</text>
+      <text class="zzz z2" x="178" y="20">z</text>
+    </svg>
+
+    <div class="chips" role="group" aria-label="Talk to Vox Nut">
+      <button class="chip" data-cat="greeting">say hi 👋</button>
+      <button class="chip" data-cat="comfort">i'm sad 🥺</button>
+      <button class="chip" data-cat="joke">joke pls</button>
+      <button class="chip" data-cat="bored">i'm bored</button>
+      <button class="chip" data-cat="compliment">hype me up</button>
+      <button class="chip" data-cat="sleepy">i'm tired</button>
+      <button class="chip" data-cat="games">games 🎮</button>
+    </div>
+
+    <form id="chatForm" class="chat" autocomplete="off">
+      <input id="chatInput" type="text" maxlength="200" placeholder="say something to Vox Nut…" aria-label="Message">
+      <button type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

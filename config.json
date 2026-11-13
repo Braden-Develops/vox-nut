@@ -1,0 +1,16 @@
+{
+  "robotName": "Vox Nut",
+  "friendName": "bestie",
+  "dayStartsHour": 7,
+  "nightStartsHour": 20,
+  "voice": {
+    "pitch": 1.6,
+    "rate": 1.0
+  },
+  "orpheus": {
+    "voice": "leah",
+    "preset": "robot-2",
+    "evilVoice": "leah",
+    "evilPreset": "vengeance-deep"
+  }
+}
