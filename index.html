@@ -99,13 +99,15 @@
               <g class="eyes eyes-sleepy">
                 <path d="M65 86 q11 8 22 0"/><path d="M113 86 q11 8 22 0"/>
               </g>
+              <!-- fancy eyes: the outer <g> places each eye; only the inner shape animates,
+                   around its own origin, so the CSS transform never fights the SVG one -->
               <g class="fancy-eyes eyes-heart">
-                <path d="M76 98 l-12 -12 a7 7 0 0 1 12 -9 a7 7 0 0 1 12 9 z"/>
-                <path d="M124 98 l-12 -12 a7 7 0 0 1 12 -9 a7 7 0 0 1 12 9 z"/>
+                <g transform="translate(76 88)"><path d="M0 10 l-12 -12 a7 7 0 0 1 12 -9 a7 7 0 0 1 12 9 z"/></g>
+                <g transform="translate(124 88)"><path d="M0 10 l-12 -12 a7 7 0 0 1 12 -9 a7 7 0 0 1 12 9 z"/></g>
               </g>
               <g class="fancy-eyes eyes-star">
-                <polygon transform="translate(76 87)" points="0,-13 3.23,-4.45 12.36,-4.02 5.23,1.7 7.64,10.52 0,5.5 -7.64,10.52 -5.23,1.7 -12.36,-4.02 -3.23,-4.45"/>
-                <polygon transform="translate(124 87)" points="0,-13 3.23,-4.45 12.36,-4.02 5.23,1.7 7.64,10.52 0,5.5 -7.64,10.52 -5.23,1.7 -12.36,-4.02 -3.23,-4.45"/>
+                <g transform="translate(76 87)"><polygon points="0,-13 3.23,-4.45 12.36,-4.02 5.23,1.7 7.64,10.52 0,5.5 -7.64,10.52 -5.23,1.7 -12.36,-4.02 -3.23,-4.45"/></g>
+                <g transform="translate(124 87)"><polygon points="0,-13 3.23,-4.45 12.36,-4.02 5.23,1.7 7.64,10.52 0,5.5 -7.64,10.52 -5.23,1.7 -12.36,-4.02 -3.23,-4.45"/></g>
               </g>
               <g class="brows">
                 <path d="M62 66 L90 76"/><path d="M138 66 L110 76"/>

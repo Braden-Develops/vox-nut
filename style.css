@@ -336,12 +336,17 @@ body.vengeance .bubble {
 
 /* fancy eyes */
 .robot .fancy-eyes { display: none; }
-.robot .eyes-heart path { fill: #ff5c8a; filter: drop-shadow(0 0 5px rgba(255, 92, 138, .8)); }
-.robot .eyes-star polygon { fill: #ffd84a; filter: drop-shadow(0 0 5px rgba(255, 216, 74, .9)); }
+/* glow lives on the static group, not the animated shape (animated SVG filters glitch on mobile) */
+.robot .eyes-heart { filter: drop-shadow(0 0 4px rgba(255, 92, 138, .8)); }
+.robot .eyes-star { filter: drop-shadow(0 0 4px rgba(255, 216, 74, .9)); }
+.robot .eyes-heart path { fill: #ff5c8a; }
+.robot .eyes-star polygon { fill: #ffd84a; }
 .robot.show-love .eyes-heart, .robot.show-star .eyes-star { display: inline; }
 .robot.show-love .eyes, .robot.show-star .eyes { display: none !important; }
-.robot .eyes-heart path { transform-box: fill-box; transform-origin: center; animation: heartbeat 1s ease-in-out infinite; }
-.robot .eyes-star polygon { transform-box: fill-box; transform-origin: center; animation: twinkle-star 1.2s ease-in-out infinite; }
+/* each shape is drawn around (0,0) inside a translated <g>, so 0 0 is its own center */
+.robot .eyes-heart path, .robot .eyes-star polygon { transform-box: view-box; transform-origin: 0 0; will-change: transform; }
+.robot .eyes-heart path { animation: heartbeat 1s ease-in-out infinite; }
+.robot .eyes-star polygon { animation: twinkle-star 1.2s ease-in-out infinite; }
 @keyframes twinkle-star { 50% { transform: rotate(20deg) scale(1.15); } }
 .robot.vengeance .fancy-eyes { display: none !important; }
 
