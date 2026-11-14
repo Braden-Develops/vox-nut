@@ -24,7 +24,41 @@ from pathlib import Path
 
 import numpy as np
 
-OLLAMA = os.environ.get("ORPHEUS_URL", "http://localhost:11434")
+# Go through the GPU gate, never Ollama (11434) directly.
+#   11435 = queued (batch renders, the default)    11436 = priority (quick interactive tests)
+# While a game is running the gate answers 503 + Retry-After; we wait and retry.
+OLLAMA = os.environ.get("ORPHEUS_URL", "http://127.0.0.1:11435")
+CLIENT = "vox-nut"
+MAX_GATE_WAIT = int(os.environ.get("GATE_MAX_WAIT", 6 * 3600))  # give up after this many seconds of 503s
+
+
+def _gate_post(path: str, body: bytes) -> dict:
+    import time
+    import urllib.error
+    waited = 0
+    while True:
+        req = urllib.request.Request(OLLAMA.rstrip("/") + path, data=body, headers={
+            "Content-Type": "application/json", "X-Gate-Client": CLIENT})
+        try:
+            with urllib.request.urlopen(req, timeout=600) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code != 503:
+                raise
+            try:
+                wait = int(e.headers.get("Retry-After") or 0)
+            except ValueError:
+                wait = 0
+            try:
+                reason = json.loads(e.read() or b"{}").get("reason", "")
+            except Exception:  # noqa: BLE001
+                reason = ""
+            wait = max(15, min(wait or 60, 900))
+            if waited + wait > MAX_GATE_WAIT:
+                raise RuntimeError(f"GPU gate busy for too long ({reason})") from e
+            print(f"   GPU gate busy ({reason or 'busy'}), retrying in {wait}s", flush=True)
+            time.sleep(wait)
+            waited += wait
 MODEL = os.environ.get("ORPHEUS_MODEL", "hf.co/lex-au/Orpheus-3b-FT-Q8_0.gguf")
 SNAC = os.environ.get("SNAC_MODEL", r"C:/Users/Braden/Tools/orpheus/snac_decoder.onnx")
 RATE = 24000
@@ -93,10 +127,7 @@ def generate(text: str, voice: str = "zoe", model: str = MODEL, temperature: flo
         "options": {"temperature": temperature, "top_p": 0.9, "repeat_penalty": 1.1,
                     "num_predict": 4000, "num_ctx": 8192, "stop": ["<custom_token_2>"]},
     }).encode()
-    req = urllib.request.Request(OLLAMA.rstrip("/") + "/api/generate", data=body,
-                                 headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=180) as r:
-        d = json.load(r)
+    d = _gate_post("/api/generate", body)
     if d.get("error"):
         raise RuntimeError(d["error"])
     c0, c1, c2 = orpheus_codes(d.get("response", ""))

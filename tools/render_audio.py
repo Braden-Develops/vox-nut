@@ -80,6 +80,7 @@ def main():
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--only", nargs="*")
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--match", help="only lines whose text contains this (e.g. \"{name}\" after changing friendName)")
     ap.add_argument("--convert", action="store_true", help="after rendering, ffmpeg wav -> mp3")
     ap.add_argument("--reprocess", action="store_true",
                     help="re-apply the config preset to every line (reuses cached raw voice, no GPU)")
@@ -90,6 +91,8 @@ def main():
     AUDIO.mkdir(exist_ok=True)
 
     todo = [l for l in lines if not args.only or l["cat"] in args.only]
+    if args.match:
+        todo = [l for l in todo if args.match in l["text"]]
     if args.limit:
         todo = todo[: args.limit]
 

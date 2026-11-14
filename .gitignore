@@ -5,3 +5,4 @@ __pycache__/
 audition/
 audio/raw/
 render.log
+render*.log

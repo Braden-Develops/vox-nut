@@ -57,10 +57,21 @@ def chat(base_url, model, system, user, temperature):
     req = urllib.request.Request(
         base_url.rstrip("/") + "/chat/completions",
         data=body,
-        headers={"Content-Type": "application/json", "Authorization": "Bearer local"},
+        headers={"Content-Type": "application/json", "Authorization": "Bearer local", "X-Gate-Client": "vox-nut-lines"},
     )
-    with urllib.request.urlopen(req, timeout=600) as r:
-        return json.load(r)["choices"][0]["message"]["content"]
+    import time
+    import urllib.error
+    for _ in range(40):
+        try:
+            with urllib.request.urlopen(req, timeout=600) as r:
+                return json.load(r)["choices"][0]["message"]["content"]
+        except urllib.error.HTTPError as e:
+            if e.code != 503:  # 503 = GPU gate busy (a game is running): wait and retry
+                raise
+            wait = max(15, min(int(e.headers.get("Retry-After") or 60), 900))
+            print(f"(GPU gate busy, retrying in {wait}s)", end=" ", flush=True)
+            time.sleep(wait)
+    raise RuntimeError("GPU gate stayed busy")
 
 
 def parse_lines(raw):
@@ -89,7 +100,7 @@ def norm(text):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--base-url", default="http://localhost:11434/v1", help="OpenAI-compatible base URL (Ollama default)")
+    ap.add_argument("--base-url", default="http://127.0.0.1:11435/v1", help="OpenAI-compatible base URL (default: the GPU gate, queued)")
     ap.add_argument("--model", required=True)
     ap.add_argument("--per", type=int, default=12, help="lines to request per category")
     ap.add_argument("--only", nargs="*", help="only these categories")
