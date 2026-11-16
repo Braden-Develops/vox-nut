@@ -578,3 +578,15 @@ body.asleep .robot .float, body.asleep .robot .head-float, body.asleep .robot .f
 body.asleep .robot .screen { opacity: .85; }
 body.asleep .bubble { animation: hint-pulse 2.2s ease-in-out infinite; }
 @keyframes hint-pulse { 50% { transform: scale(1.03); } }
+
+/* =========================================================
+   Tiny-screen mode (2" 240x320 LCD): only Vox Nut, filling the screen
+   ========================================================= */
+html.lcd, html.lcd body { height: 100%; overflow: hidden; cursor: none; }
+html.lcd .topbar, html.lcd .bubble, html.lcd .chips, html.lcd .chat,
+html.lcd .sky, html.lcd .zzz, html.lcd #wardrobe, html.lcd .dragon, html.lcd .rain { display: none !important; }
+html.lcd .stage { padding: 0; min-height: 100vh; height: 100vh; justify-content: center; max-width: none; }
+html.lcd .robot-wrap { margin: 0; width: 100vw; height: 100vh; align-items: center; }
+/* in LCD mode the drawing is 200x318 (extra headroom for hats): fit it in either orientation */
+html.lcd .robot { width: min(100vw, 100vh * 200 / 318); height: auto; max-height: 100vh; filter: none; }
+html.lcd .fx-p { --s: 12px; }

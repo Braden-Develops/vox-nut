@@ -22,6 +22,13 @@
   let lastCat = null;
   let lastInteract = Date.now();
 
+  // body-only mode for tiny screens (set by the inline script in index.html)
+  const isLcd = () => document.documentElement.classList.contains("lcd");
+  // on the LCD, add headroom to the drawing so the bob, antenna and tall hats (wizard, halo) never clip
+  function fitLcd() { robot.setAttribute("viewBox", isLcd() ? "0 -48 200 318" : "0 0 200 270"); }
+  fitLcd();
+  window.addEventListener("resize", fitLcd);
+
   // storage that never throws (private mode etc.)
   function load(k, d) { try { const v = localStorage.getItem("cherry:" + k); return v === null ? d : v; } catch { return d; } }
   function save(k, v) { try { localStorage.setItem("cherry:" + k, v); } catch { /* ignore */ } }
@@ -441,7 +448,7 @@
         pick[2]?.();
       }
       idleAnimLoop();
-    }, 6000 + Math.random() * 9000);
+    }, isLcd() ? 3500 + Math.random() * 6000 : 6000 + Math.random() * 9000); // livelier on the desk LCD
   })();
 
   (function blinkLoop() {
@@ -898,6 +905,9 @@
     wakeCat = away || params.has("welcome") ? (Math.random() < 0.5 ? "hello-away" : "welcomeback") : "hello";
 
     // asleep until her first tap (that tap also unlocks sound)
+    // tiny LCD (no touch): skip tap-to-wake and just live there
+    if (isLcd()) { setMood(restingMood(), 0); return; }
+
     pending = q;
     asleep = true;
     document.body.classList.add("asleep");

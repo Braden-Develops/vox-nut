@@ -12,6 +12,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Creepster&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Tiny-screen mode (e.g. the 2" 240x320 LCD): only Vox Nut, nothing else.
+    // Auto when BOTH sides are <= 360px (phones are never that small); ?lcd forces on, ?lcd=0 forces off.
+    (function () {
+      var q = new URLSearchParams(location.search);
+      var mq = matchMedia("(max-width: 360px) and (max-height: 360px)");
+      function apply() {
+        var on = q.has("lcd") ? q.get("lcd") !== "0" : mq.matches;
+        document.documentElement.classList.toggle("lcd", on);
+      }
+      apply();
+      if (mq.addEventListener) mq.addEventListener("change", apply);
+    })();
+  </script>
 </head>
 <body>
   <div class="sky" aria-hidden="true">
