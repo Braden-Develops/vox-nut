@@ -80,7 +80,7 @@
     greeting: "happy", comfort: "sad", joke: "happy", bored: "", compliment: "happy",
     sleepy: "sleepy", goodnight: "sleepy", flustered: "shy", tap: "happy", bit: "happy",
     gw2: "happy", mtg: "happy", repo: "happy", idle: "", daily: "shy", confused: "shy", love: "shy",
-    vengeance: "", sorry: "shy", pet: "happy", welcomeback: "happy", hello: "happy", "hello-away": "happy",
+    vengeance: "", sorry: "shy", pet: "happy", welcomeback: "happy", wink: "shy", "egg-braden": "shy", hello: "happy", "hello-away": "happy",
   };
 
   // ---------- particles + fancy eyes ----------
@@ -125,6 +125,8 @@
     pet: () => { setEyes("love", petting ? 0 : 3000); if (!petting) spawn("♥", 6, "heart"); },
     welcomeback: () => { setEyes("love", 3000); flash("hop", 900); spawn("♥✦", 10, "heart", { spread: 200 }); },
     joke: () => flash("wiggle", 1400),
+    wink: () => { flash("look", 1600); spawn("♥", 3, "heart", { spread: 70, rise: -90 }); },
+    "egg-braden": () => { flash("wiggle", 1400); spawn("!?", 3, "bang", { spread: 80, rise: -90 }); },
     flustered: () => spawn("!?", 3, "bang", { spread: 80, rise: -90 }),
     goodnight: () => spawn("z", 3, "zz", { spread: 60, rise: -80 }),
     daily: () => spawn("♥✦", 5, "heart"),
@@ -303,14 +305,14 @@
     if (taps.length >= 14) { taps = []; vengeance(); }
     else if (taps.length === 5) say("flustered");
     else if (taps.length > 5 && taps.length % 3 === 0) say("flustered");
-    else if (taps.length < 5 && (taps.length === 1 || !speaking())) say("tap");
+    else if (taps.length < 5 && (taps.length === 1 || !speaking())) say(wink("tap"));
   }
 
   function startPet() {
     petting = true;
     taps = [];
     robot.classList.add("petting");
-    say("pet");
+    say(wink("pet"));
     spawn("♥", 3, "heart");
     petHearts = setInterval(() => spawn("♥", 1, "heart", { spread: 90 }), 380);
   }
@@ -347,7 +349,7 @@
   robot.addEventListener("contextmenu", (e) => e.preventDefault());
 
   document.querySelectorAll(".chip").forEach((b) =>
-    b.addEventListener("click", () => { if (!vengeful) { pending = null; say(b.dataset.cat); } })
+    b.addEventListener("click", () => { if (!vengeful) { pending = null; say(wink(b.dataset.cat)); } })
   );
 
   $("#chatForm").addEventListener("submit", (e) => {
@@ -370,7 +372,7 @@
       flash("dance", 3200); setMood("happy", 3200);
       spawn("♪♫", 8, "note", { spread: 180 });
     }
-    else say(cat);
+    else say(wink(cat));
   });
 
   soundBtn.addEventListener("click", () => {
@@ -408,7 +410,7 @@
       if (document.hidden || vengeful || asleep) return resetIdle();
       const memo = Math.random() < 0.4 && memoryThought();
       if (memo) showThought(memo);
-      else say("idle", { quiet: true, thought: true });
+      else say(wink("idle"), { quiet: true, thought: true });
     }, 40000 + Math.random() * 40000);
   }
 
@@ -728,6 +730,19 @@
     store.save();
   }
 
+  // ---------- little secrets ----------
+  // At most once a day, and only after she's visited on 3+ different days, Vox Nut
+  // lets slip that Braden likes her, in place of a normal line. ?wink forces it (for testing).
+  const WINK_ODDS = { tap: 0.06, pet: 0.12, love: 0.25, compliment: 0.15, daily: 0.2, idle: 0.1 };
+  const forceWink = new URLSearchParams(location.search).has("wink");
+  function wink(cat) {
+    if (forceWink) return WINK_ODDS[cat] ? "wink" : cat;
+    if (!WINK_ODDS[cat] || S.winkDay === dayKey() || S.days.length < 3 || Math.random() >= WINK_ODDS[cat]) return cat;
+    S.winkDay = dayKey();
+    store.save();
+    return "wink";
+  }
+
   // ---------- hidden commands ----------
   function bodyFlash(cls, ms) {
     document.body.classList.add(cls);
@@ -791,6 +806,7 @@
       setTimeout(() => flash("look", 1600), 400);
     }],
     [/make it rain|rain(ing)? hearts?|\brain\b/, () => { heartRain(); say("egg-rain"); }],
+    [/\bbraden\b/, () => say("egg-braden")],
     [/\bvox ?nut\b|^vox\b/, () => { flash("hop", 900); say("egg-name"); }],
     [/\bsing\b|a song/, () => { flash("hum", 3000); spawn("♪♫", 8, "note", { spread: 160 }); say("egg-sing"); }],
     [/\bspin\b|do a flip|barrel roll/, () => { flash("flip", 900); setTimeout(() => flash("flip", 900), 950); say("egg-spin"); }],

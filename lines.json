@@ -2945,6 +2945,126 @@
    "cat": "wake-hint",
    "time": "any",
    "text": "Psst. Tap me to wake me up."
+  },
+  {
+   "id": "wink-any-001",
+   "cat": "wink",
+   "time": "any",
+   "text": "Hm. I think Braden likes you."
+  },
+  {
+   "id": "wink-any-002",
+   "cat": "wink",
+   "time": "any",
+   "text": "Psst. Don't tell Braden I said this, but Braden thinks you're really cool."
+  },
+  {
+   "id": "wink-any-003",
+   "cat": "wink",
+   "time": "any",
+   "text": "Beep. Classified intel: Braden made me just for you. That's kind of a big deal."
+  },
+  {
+   "id": "wink-any-004",
+   "cat": "wink",
+   "time": "any",
+   "text": "I'm not saying Braden likes you. I'm just saying my data is very suggestive."
+  },
+  {
+   "id": "wink-any-005",
+   "cat": "wink",
+   "time": "any",
+   "text": "Someone talks about you a lot. Starts with B. Ends with raden. <giggle>"
+  },
+  {
+   "id": "wink-any-006",
+   "cat": "wink",
+   "time": "any",
+   "text": "My matchmaking module is beeping. I don't know why. Okay, I know why."
+  },
+  {
+   "id": "wink-any-007",
+   "cat": "wink",
+   "time": "any",
+   "text": "Fun fact: Braden made sure I'd never forget your name. Interesting. Very interesting."
+  },
+  {
+   "id": "wink-any-008",
+   "cat": "wink",
+   "time": "any",
+   "text": "Hmm, Braden picked my voice, my outfits, and you. Great taste, honestly."
+  },
+  {
+   "id": "wink-day-001",
+   "cat": "wink",
+   "time": "day",
+   "text": "Shy little secret: Braden lights up when your name comes up. I have sensors. I notice things."
+  },
+  {
+   "id": "wink-day-002",
+   "cat": "wink",
+   "time": "day",
+   "text": "If Braden asks, I never said anything. But Braden thinks you're awesome."
+  },
+  {
+   "id": "wink-night-001",
+   "cat": "wink",
+   "time": "night",
+   "text": "Cozy secret: Braden made me so you'd never feel alone at night. I think that's sweet."
+  },
+  {
+   "id": "wink-night-002",
+   "cat": "wink",
+   "time": "night",
+   "text": "Late night thought. Braden would want you to sleep well. Braden worries about you. I can tell."
+  },
+  {
+   "id": "egg-braden-any-001",
+   "cat": "egg-braden",
+   "time": "any",
+   "text": "Braden? Never heard of them. Okay fine, my creator. But I'm sworn to secrecy. Beep."
+  },
+  {
+   "id": "egg-braden-any-002",
+   "cat": "egg-braden",
+   "time": "any",
+   "text": "My lips are sealed. I don't technically have lips, but they are sealed."
+  },
+  {
+   "id": "egg-braden-any-003",
+   "cat": "egg-braden",
+   "time": "any",
+   "text": "<gasp> Are you asking what I think you're asking? No comment. I'm not blushing. You're blushing."
+  },
+  {
+   "id": "egg-braden-any-004",
+   "cat": "egg-braden",
+   "time": "any",
+   "text": "Error four oh four. Braden's secrets not found. Try asking Braden yourself!"
+  },
+  {
+   "id": "egg-braden-any-005",
+   "cat": "egg-braden",
+   "time": "any",
+   "text": "I plead the fifth. That's robot law."
+  },
+  {
+   "id": "egg-braden-any-006",
+   "cat": "egg-braden",
+   "time": "any",
+   "text": "Braden made me, so Braden has great taste. And then Braden gave me to you. Hmm. Hmmmm."
+  },
+  {
+   "id": "egg-braden-any-007",
+   "cat": "egg-braden",
+   "time": "any",
+   "text": "Ooh, I could tell you something about Braden. But then I'd have to beep you."
+  },
+  {
+   "id": "egg-braden-any-008",
+   "cat": "egg-braden",
+   "time": "any",
+   "text": "Braden? <giggle> Next question. Next question please."
   }
  ]
 }
